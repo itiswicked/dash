@@ -1,0 +1,88 @@
+body {
+  background-color: #313131;
+  color: white;
+  font-size: 3rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.train-wrapper {
+  padding: 40px;
+  display: flex;
+}
+
+.circle {
+  flex: 2;
+}
+
+.circle-wrapper {
+  height: 250px;
+  width: 250px;
+  background-color: #fd8a03;
+  border-radius: 50%;
+}
+
+.train {
+  flex: 4;
+  display: flex;
+  padding: 10px 40px;
+}
+
+.train-info {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+}
+
+.arriving {
+  margin-top: 55px;
+  opacity: inherit;
+  transition: opacity 100ms ease;
+}
+
+.time-away-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+    /*height: 400px;*/
+}
+
+.time-away {
+  transition: opacity 500ms ease, bottom 500ms ease;
+  position: absolute;
+
+  bottom: -100%;
+  opacity: 0;
+}
+
+.time-minutes {
+  font-size: 12rem;
+  line-height: 10rem;
+}
+
+.wipe-in {
+  opacity: 1;
+  transition: opacity 500ms, bottom 500ms;
+  /*transform: translateY(-100%);*/
+  bottom: 0;
+}
+
+.wipe-out {
+  opacity: 0;
+  transition: opacity 500ms ease, bottom 500ms ease;
+  bottom: 100%;
+
+}
+
+.stage {
+  bottom: -100%
+}
