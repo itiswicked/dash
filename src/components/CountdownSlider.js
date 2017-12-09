@@ -10,7 +10,7 @@ const CountdownSlider = ({ countDownTimes }) => {
       return (
         <div key={index} className="time-away">
           <h1 className="time-minutes">{time}</h1>
-          <p>minutes</p>
+          <p className="time-label">{time === 1 ? "minute" : "minutes"}</p>
         </div>
       )
     });

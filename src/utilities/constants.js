@@ -8,3 +8,5 @@ export const carouselProps = {
   interval: 10000,
   autoplay: true
 };
+
+export const assetPath = 'http://localhost:8000';

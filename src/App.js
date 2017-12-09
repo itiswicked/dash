@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { assetPath } from './utilities/constants';
 import TrainStopContainer from './components/TrainStopContainer';
 
 
@@ -9,9 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <TrainStopContainer />
-        <div className="other-content">
-          yo
-        </div>
+        <img className="umbrella" src={`${assetPath}/umbrella.svg`} />
       </div>
     );
   }

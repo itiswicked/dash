@@ -61,7 +61,15 @@ p {
 .time-minutes {
   font-size: 12rem;
   line-height: 10rem;
+}
+
+.time-minutes, .time-label {
   text-align: center;
+}
+
+.umbrella {
+  height: 300px;
+  transform: rotate(-45deg);
 }
 
 * {

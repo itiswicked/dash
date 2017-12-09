@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-
 import TerminalSlider from './TerminalSlider';
 import ArrivalTimeSlider from './ArrivalTimeSlider';
 import CountdownSlider from './CountdownSlider';
@@ -39,7 +38,7 @@ class TrainStopContainer extends React.Component {
     let _moment_ = moment();
     let diff = time.diff(moment())
     let minutes = moment.duration(diff).asMinutes()
-    // debugger;
+
     return Math.floor(minutes);
 
   }
@@ -64,9 +63,7 @@ class TrainStopContainer extends React.Component {
         </div>
         <div className="train">
           <div className="train-info">
-            <h2 className="train-stop">
-              { "Stony Brook" }
-            </h2>
+            <h2 className="train-stop"> Stony Brook </h2>
             <TerminalSlider terminals={terminals} />
             <ArrivalTimeSlider times={arrivalTimes} />
           </div>
@@ -86,7 +83,7 @@ let mapStateToProps = state => ({
 
 let mapDispatchToProps = dispatch => ({
   getTrainStop: stopId => dispatch(getTrainStopData(stopId))
-})
+});
 
 export default connect(
   mapStateToProps,
