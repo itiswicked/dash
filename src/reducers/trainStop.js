@@ -32,13 +32,13 @@ function nearestTrips(payload) {
   return payload.mode[0].route[0].direction.map(direction => {
       let trip = getNextTrip(direction.trip);
       let terminal = trip.trip_headsign;
-      return { terminal, arrivalTime: moment(trip.sch_arr_dt, "X") };
+      return { terminal, arrivalTime: moment(trip.pre_dt, "X") };
     });
 }
 
 function getNextTrip(trips) {
   return trips.find(trip => {
-    let arrivalTime = moment(trip.sch_arr_dt, "X");
+    let arrivalTime = moment(trip.pre_dt, "X");
     return arrivalTime.isAfter(moment()) && arrivalTime.diff(moment(), 'minutes') > 0;
   });
 }

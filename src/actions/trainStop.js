@@ -1,5 +1,5 @@
 import api from './../api/backend';
-import mbta from './../api/mbta';
+import Mbta from './../api/mbta';
 
 export const GET_TRAIN_STOP_DATA = 'GET_TRAIN_STOP_DATA__REQUEST';
 
@@ -27,10 +27,8 @@ export function getTrainStopData(stopId) {
     dispatch(getTrainStopDataRequest());
     api
       .get('/env/MBTA_API_KEY')
-      .then(mbtaKey => mbta.getTrainStop(stopId, mbtaKey.theKey))
+      .then(mbtaKey => Mbta.getTrainStop(stopId, mbtaKey.theKey))
       .then(mbtaData => dispatch(getTrainStopDataSuccess(mbtaData)))
       .catch(mbtaError => dispatch(getTrainStopDataFailure(mbtaError)))
-      // .then(json => this.findNextTrainTimes(json))
-      // .then(trainTimes => this.setState({ trainTimes }));
   }
 }

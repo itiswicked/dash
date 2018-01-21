@@ -40,7 +40,6 @@ class TrainStopContainer extends React.Component {
     let minutes = moment.duration(diff).asMinutes()
 
     return Math.floor(minutes);
-
   }
 
   getDisplayTime(time) {
@@ -49,10 +48,10 @@ class TrainStopContainer extends React.Component {
 
   render() {
     let trips = this.props.trainStop.nearestTrips;
-    console.log(trips && trips[0].arrivalTime.calendar());
-    console.log(trips && trips[1].arrivalTime.calendar());
-    console.log("TIME NOW", moment().calendar());
-    console.log("------------------------------------");
+    // console.log("FOREST HILLS: ", trips && trips[0].arrivalTime.calendar());
+    // console.log("OAK GROVE: ", trips && trips[1].arrivalTime.calendar());
+    // console.log("TIME NOW", moment().calendar());
+    // console.log("------------------------------------");
     let terminals = trips && trips.map(trip => trip.terminal);
     let arrivalTimes = trips && trips.map(trip => this.getDisplayTime(trip.arrivalTime));
     let countDownTimes = trips && trips.map(trip => this.getMinutesFromNow(trip.arrivalTime));

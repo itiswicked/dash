@@ -1,11 +1,9 @@
 import fetchJson from './fetchJson';
 
-class Mbta {
-  constructor() {
-    this.domain = 'http://realtime.mbta.com'
-    this.base = `${this.domain}/developer/api/v2`;
-  }
+const DOMAIN = 'http://realtime.mbta.com';
+const BASE = `${DOMAIN}/developer/api/v2`
 
+class Mbta {
   handleResponse(json) {
     let { error } = json;
     if (error) {
@@ -15,12 +13,12 @@ class Mbta {
     }
   }
 
-  getTrainStop(stopId, key) {
+  static getTrainStop(stopId, key) {
     let request = `/predictionsbystop?api_key=${key}&stop=${stopId}&format=json`
-    return fetchJson(this.base + request)
+    return fetchJson(BASE + request)
     .then(this.handleResponse);
   }
 
 }
 
-export default new Mbta();
+export default Mbta;
